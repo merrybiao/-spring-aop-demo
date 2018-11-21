@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ 
+ 	 <bean id="say" class="com.hello.demo.impl.SayHello">
+ <property name="name" value="fengsigaoju"></property>
+ </bean>
+<bean id="af" class="com.hello.aop.AfterSay">
+</bean>
+ 
+<aop:config>
+   <aop:aspect ref="af">
+   <aop:after method="aftersay" pointcut="execution(* com.hello.demo.impl.SayHello.say(..))"></aop:after>
+   </aop:aspect>
+</aop:config>
+ 	
+    <!-- 配置自动扫描的包 -->
+    <context:component-scan base-package="com.hello"></context:component-scan>
+    <!-- 自动为切面方法中匹配的方法所在的类生成代理对象。 -->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>
