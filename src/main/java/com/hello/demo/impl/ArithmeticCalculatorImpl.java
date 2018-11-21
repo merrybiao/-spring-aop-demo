@@ -2,6 +2,7 @@ package com.hello.demo.impl;
 
 import org.springframework.stereotype.Component;
 
+import com.hello.annotation.SysLog;
 import com.hello.demo.ArithmeticCalculator;
  
 //将实现类加入Spring的IOC容器进行管理
@@ -12,7 +13,8 @@ public class ArithmeticCalculatorImpl implements ArithmeticCalculator {
         int result = i + j;
         return result;
     }
- 
+    
+    @SysLog
     public int sub(int i, int j) throws Exception{
         int result = i - j;
         return result;

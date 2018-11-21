@@ -19,9 +19,11 @@ public class Test {
 	        /*int result = arithmeticCalculator.add(3, 5);
 	        System.out.println("result: " + result);*/
 	 
-	       int  result = arithmeticCalculator.div(5, 0);
-	        System.out.println("result: " + result);
+	     /*  int  result = arithmeticCalculator.div(5, 0);
+	        System.out.println("result: " + result);*/
 	 
+	        Integer  result = arithmeticCalculator.sub(5, 23);
+	        System.out.println("result: " + result);
 	    }
 
 }
